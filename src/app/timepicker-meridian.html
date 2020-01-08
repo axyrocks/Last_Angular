@@ -1,0 +1,21 @@
+<!-- <div class="input-container">
+        <input class="input-field" type="text" value={{newTime}}>
+        
+</div> -->
+
+   <div class="input-group row">        
+        <input type="text" [disabled]="true" style="text-align: center;margin-top: 40px;margin-left: 20px;width: 160px;border: 1px solid gray;" value="{{newTime}} {{timeofday}}" class="card">
+        <div class="input-group-prepend" style="margin-top: 40px;">
+                <i class="fa fa-clock-o input-group-text"  (click)="toggle()" [ngbTooltip]="content" tooltipClass="my-custom-class" placement="bottom-right"  triggers="manual" #t="ngbTooltip" (click)="t.open()" [autoClose]="'outside'"></i>
+         </div>
+    </div>
+<ng-template #content >
+
+  <button class="btn btn-link change" style="margin-left:140px !important;" type="button"  (click)=reverse(timeofday)>
+    <span class="chevron ngb-tp-chevron apply"></span>
+  </button>
+  <ngb-timepicker  [(ngModel)]="time" [meridian]="meridian" (ngModelChange)="onTimeChange($event)"  class="myclass"></ngb-timepicker>
+  <button class="btn btn-link change1" style="margin-left:140px !important;" type="button" (click)=reverse(timeofday)>
+    <span class="chevron ngb-tp-chevron bottom default "></span>
+  </button>
+</ng-template>
